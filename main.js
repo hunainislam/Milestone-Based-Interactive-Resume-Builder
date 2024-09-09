@@ -46,24 +46,27 @@ editResumeButton === null || editResumeButton === void 0 ? void 0 : editResumeBu
     document.getElementById('education-info').contentEditable = 'true';
     document.getElementById('work-info').contentEditable = 'true';
     // Make skills editable
+
     //     const skillsItems = document.querySelectorAll('#skills-list li');
     //     skillsItems.forEach(item => {
     //         item.contentEditable = 'true';
     //     });
     // });
-    const skillsItems = document.querySelectorAll('#skills-list li');
-    skillsItems.forEach(item => {
-        item.contentEditable = 'true';
+        const skillsItems = document.querySelectorAll('#skills-list li');
+        skillsItems.forEach(item => {
+            item.contentEditable = 'true';
+        });
     });
+
     // Unique URL and Shareable Link (Milestone 5)
     const shareResumeButton = document.getElementById('share-resume');
     shareResumeButton === null || shareResumeButton === void 0 ? void 0 : shareResumeButton.addEventListener('click', () => {
         var _a;
         const username = (_a = document.getElementById('name').textContent) === null || _a === void 0 ? void 0 : _a.toLowerCase().replace(/ /g, '-');
-        const resumeURL = `https://${username}.vercel.app/resume`;
+        const resumeURL =`https://${username}.milestone-based-interactive-resume-builder.vercel.app/`
         // Display the link to the user
         alert(`Your resume link: ${resumeURL}`);
+        // console.log(`Your resume link: ${resumeURL}`)
         // Optionally, implement code to generate a downloadable PDF of the resume
         // This requires more advanced functionality, such as using libraries like jsPDF.
     });
-});

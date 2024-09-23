@@ -87,12 +87,12 @@ function toggleEditableSection(...sectionIds) {
 
 const shareableLink = document.location.href;
 
-document.querySelector("#copy-link")
+document.querySelector("#shareable-link").innerHTML = shareableLink
 
 document.querySelector("#copy-link").addEventListener('click', function() {
     navigator.clipboard.writeText(shareableLink) 
     .then(() => {
-        alert(`Link copied to clipboard! ${"http://127.0.0.1:5501/index.html"}`);  // Confirmation alert
+        alert("Link copied to clipboard!");  // Confirmation alert
     })
     .catch(err => {
         console.error('Copy karne me error: ', err);  // genrate error

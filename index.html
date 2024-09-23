@@ -46,10 +46,12 @@
         </main>
     
         <footer>
-            <button id="toggle-skills" style="background-color: aqua;">Your Skills</button>
-            <button id="edit-resume" style="background-color: aqua;">Edit Form</button>
-            <button id="generate-resume" style="background-color: aqua;">Generate Form</button>
-            <button id="share-resume" style="background-color: aqua;">Share Form</button>
+            <button id="toggle-skills" style="background-color: aqua; border-radius: 6px;">Your Skills</button>
+            <button id="edit-resume" style="background-color: aqua; border-radius: 6px;">Edit Form</button>
+            <button id="generate-resume" style="background-color: aqua; border-radius: 6px;">Generate Form</button>
+            <button id="copy-link" style="background-color: aqua; border-radius: 6px;">Share Form</button>
+            <!-- <p id="copy-link"></p> -->
+            <button id="download-pdf" style="background-color: aqua; border-radius: 6px;">Download Form as PDF</button>
         </footer>
     
         <section id="resume-form" style="display: none;">
@@ -64,17 +66,18 @@
                 <label for="education-input">Education:</label>
                 <input type="text" id="education-input" name="education" required style="background-color: aqua;"><br>
     
-                <label for="skills-input">Skills (comma-separated):</label>
+                <label for="skills-input">Skills:</label>
                 <input type="text" id="skills-input" name="skills" required style="background-color: aqua;"><br>
     
                 <label for="work-input">Work Experience:</label>
                 <input type="text" id="work-input" name="work" required style="background-color: aqua;"><br>
     
-                <button type="submit" style="background-color: aqua;">Submit</button>
+                <button type="submit" style="background-color: aqua; border-radius: 6px;">Submit</button>
             </form>
         </section>
     
         <script src="main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
       </body>
 
       <script src="finisher-header.es5.min.js" type="text/javascript"></script>

@@ -1,6 +1,7 @@
 "use strict";
 
 // Toggle the visibility of the Skills section (Milestone 1)
+
 const toggleButton = document.querySelector('#toggle-skills');
 const skillsSection = document.querySelector('#skills');
 toggleButton === null || toggleButton === void 0 ? void 0 : toggleButton.addEventListener('click', () => {
@@ -9,7 +10,8 @@ toggleButton === null || toggleButton === void 0 ? void 0 : toggleButton.addEven
     }
 });
 
-// // Show the form to create a resume
+
+// Show the form to create a resume
 
 // (Milestone 3)
 
@@ -21,7 +23,7 @@ generateResumeButton === null || generateResumeButton === void 0 ? void 0 : gene
     resumeForm.style.display = 'block';
 });
 
-// // Handle form submission to generate the resume (Milestone 3)
+// Handle form submission to generate the resume (Milestone 3)
 
 const resumeFormElement = document.querySelector('#resume-builder-form');
 resumeFormElement === null || resumeFormElement === void 0 ? void 0 : resumeFormElement.addEventListener('submit', (event) => {
@@ -48,42 +50,68 @@ resumeFormElement === null || resumeFormElement === void 0 ? void 0 : resumeForm
         skillsList.appendChild(li);
     });
     document.querySelector('#work-info').textContent = workInput;
+
     // Hide the form after submission
     resumeForm.style.display = 'none';
+
 });
 
-// Editable Resume (Milestone 4)
+// Editable Form (Milestone 4)
 
-// const editResumeButton = document.querySelector('#edit-resume');
+// Make the Form editable
 
-// editResumeButton === null || editResumeButton === void 0 ? void 0 : editResumeButton.addEventListener('click', (event) => {
-//     document.querySelector('#name').contentEditable = 'true';
-//     document.querySelector('#contact').contentEditable = 'true';
-//     document.querySelector('#education-info').contentEditable = 'true';
-//     document.querySelector('#work-info').contentEditable = 'true';
+const edit_resume = document.querySelector("#edit-resume").addEventListener('click', function() {
+    toggleEditableSection("#display-name", "#display-email", "#skills-list", "#education-info", "#work-info");
+});
 
-//     // Make skills editable
+// // Helper function to toggle contentEditable on a section
 
-//     //     const skillsItems = document.querySelectorAll('#skills-list li');
-//     //     skillsItems.forEach(item => {
-//     //         item.contentEditable = 'true';
-//     //     });
-//     // });
-//         const skillsItems = document.querySelectorAll('#skills-list li');
-//         skillsItems.forEach(item => {
-//             item.contentEditable = 'true';
-//         });
-//     });
+function toggleEditableSection(...sectionIds) {
+    sectionIds.forEach(sectionId => {
+        const section = document.querySelector(sectionId);
+        if (section.contentEditable === 'true') {
+            section.contentEditable = 'false';
+            section.style.border = 'none';  // Remove any visual indication of edit mode
+        } else {
+            section.contentEditable = 'true';
+            section.style.border = '2px dashed aqua';  // Add visual indication of edit mode
+            section.focus();  // Focus the section for immediate editing
+        }
+    });
+}
 
-//     // Unique URL and Shareable Link (Milestone 5)
-//     const shareResumeButton = document.querySelector('#share-resume');
-//     shareResumeButton === null || shareResumeButton === void 0 ? void 0 : shareResumeButton.addEventListener('click', () => {
-//         var _a;
-//         const username = (_a = document.querySelectorAll('#name').textContent) === null || _a === void 0 ? void 0 : _a.toLowerCase().replace(/ /g, '-');
-//         const resumeURL =`https://${username}.milestone-based-interactive-resume-builder.vercel.app/`
-//         // Display the link to the user
-//         alert(`Your resume link: ${resumeURL}`);
-//         // console.log(`Your resume link: ${resumeURL}`)
-//         // Optionally, implement code to generate a downloadable PDF of the resume
-//         // This requires more advanced functionality, such as using libraries like jsPDF.
-    // });
+
+// Unique URL and Shareable Link (Milestone 5)
+
+// Current page link create
+
+const shareableLink = document.location.href;
+
+document.querySelector("#copy-link")
+
+document.querySelector("#copy-link").addEventListener('click', function() {
+    navigator.clipboard.writeText(shareableLink) 
+    .then(() => {
+        alert(`Link copied to clipboard! ${"http://127.0.0.1:5501/index.html"}`);  // Confirmation alert
+    })
+    .catch(err => {
+        console.error('Copy karne me error: ', err);  // genrate error
+    });
+});
+
+// PDF download section
+
+document.querySelector("#download-pdf").addEventListener('click', function() {
+
+    const resumeElement = document.body;  // All body pdf create
+
+    html2pdf()
+        .from(resumeElement)  // HTML element convert
+        .set({
+            // margin: 1,
+            filename: 'resume.pdf',  // File name
+            html2canvas: { scale: 2 },  // High quality output scale
+            jsPDF: { orientation: 'portrait' }  // Portrait orientation
+        })
+        .save();  // PDF file saveus 
+})

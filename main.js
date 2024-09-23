@@ -108,10 +108,10 @@ document.querySelector("#download-pdf").addEventListener('click', function() {
     html2pdf()
         .from(resumeElement)  // HTML element convert
         .set({
-            // margin: 1,
+            margin: 1,
             filename: 'resume.pdf',  // File name
             html2canvas: { scale: 2 },  // High quality output scale
-            jsPDF: { orientation: 'portrait' }  // Portrait orientation
+            jsPDF: { orientation: 'portrait' },  // Portrait orientation 
         })
         .save();  // PDF file saveus 
 })

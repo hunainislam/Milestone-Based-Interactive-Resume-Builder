@@ -90,7 +90,7 @@ const shareableLink = document.location.href;
 const copylink = document.querySelector("#copy-link").addEventListener('click', function() {
     navigator.clipboard.writeText(shareableLink) 
     .then(() => {
-        alert(`Link copied! ${"http://127.0.0.1:5501/index.html"}`);  // Confirmation alert
+        alert(`Link copied! ${"https://milestone-based-interactive-resume-builder.vercel.app/"}`);  // Confirmation alert
     })
     .catch(err => {
         console.error('Copy karne me error: ', err);  // genrate error

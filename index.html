@@ -9,28 +9,31 @@
 </head>
 <body>
     <body>
-        <div class="header finisher-header" style="width: 100%; height: 350px;">
+        <div class="header finisher-header" style="width: 100%; height: 750px;">
 
           <header>
-            <h1 id="name" style="color: white;">Malik Hunain</h1>
-            <p id="contact" style="color: white;">Contact: hunainislam09@gamil.com</p>
-            <img id="profile-picture" src="hunain.png" alt="Profile Picture">
+            <h1 id="name" class="name">Malik Hunain</h1>
+            <p id="contact" class="contact">Contact: hunainislam09@gamil.com</p>
+            <!-- <img id="profile-picture" src="hunain.png" alt="Profile Picture"> -->
+            <img id="profile-picture" src="hunain.png" alt="Profile Picture" width="150" height="150">
+            <!-- Image Upload Button -->
+            <input type="file" id="upload-image" accept="image/*">
         </header>
         </div>
         <main>
             <section id="personal-info">
-                <h2 style="color: aqua;">Personal Information</h2>
+                <h2 class="personal">Personal Information</h2>
                 <p>Name: <span id="display-name">Malik Hunain Ahmed Attari</span></p>
                 <p>Email: <span id="display-email">hunainislam09@gamil.com</span></p>
             </section>
     
             <section id="education">
-                <h2 style="color: aqua;">Education</h2>
-                <p id="education-info">Front-End Developer </p>
+                <h2 class="education">Education</h2>
+                <p class="education-info" id="education-info">Front-End Developer </p>
             </section>
     
             <section id="skills">
-                <h2 style="color: aqua;">Skills</h2>
+                <h2 class="skill">Skills</h2>
                 <ul id="skills-list">
                     <li>HTML</li>
                     <li>CSS</li>
@@ -40,21 +43,21 @@
             </section>
     
             <section id="work-experience">
-                <h2 style="color: aqua;">Work Experience</h2>
-                <p id="work-info">Front-End Developer at (2024-Present)</p>
+                <h2 class="work">Work Experience</h2>
+                <p id="work-infom" class="work-info">Front-End Developer at (2024-Present)</p>
             </section>
         </main>
     
         <footer>
-            <button id="toggle-skills" style="background-color: aqua; border-radius: 6px;">Your Skills</button>
-            <button id="edit-resume" style="background-color: aqua; border-radius: 6px;">Edit Form</button>
-            <button id="generate-resume" style="background-color: aqua; border-radius: 6px;">Generate Form</button>
-            <button id="copy-link" style="background-color: aqua; border-radius: 6px;">Share Form</button>
-            <button id="download-pdf" style="background-color: aqua; border-radius: 6px;">Download Form as PDF</button>
+            <button id="toggle-skills">Your Skills</button>
+            <button id="edit-resume">Edit Form</button>
+            <button id="generate-resume">Generate Form</button>
+            <button id="copy-link">Share Form</button>
+            <button id="download-pdf">Download Form as PDF</button>
         </footer>
     
-        <section id="resume-form" style="display: none;">
-            <h2 style="color: aqua;">Fill Out Your Form</h2>
+        <section id="resume-form">
+            <h2>Fill Out Your Form</h2>
             <form id="resume-builder-form">
                 <label for="name-input">Name:</label>
                 <input type="text" id="name-input" name="name" required style="background-color: aqua;"><br>
@@ -71,11 +74,13 @@
                 <label for="work-input">Work Experience:</label>
                 <input type="text" id="work-input" name="work" required style="background-color: aqua;"><br>
     
-                <button type="submit" style="background-color: aqua; border-radius: 6px;">Submit</button>
+                <button type="submit" class="btn">Submit</button>
             </form>
         </section>
     
         <script src="main.js"></script>
+        <!-- Add jsPDF library -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
       </body>
 
@@ -85,9 +90,9 @@
         new FinisherHeader({
           "count": 100,
           "size": {
-            "min": 2,
-            "max": 8,
-            "pulse": 0
+            "min": 5,
+            "max": 20,
+            "pulse": 0,
           },
           "speed": {
             "x": {
@@ -96,7 +101,7 @@
             },
             "y": {
               "min": 0,
-              "max": 0.6
+              "max": 0.6,
             }
           },
           "colors": {
@@ -121,10 +126,9 @@
         });
         </script>
         <section class="banner">
-           <img src="hunain.png" width="150" height="150" alt="no image">
           <div class="banner-content">
-            <h2 style="color: aqua;">Hello</h2>
-            <p>
+            <h2>Hello</h2>
+            <p >
               I'm Malik Hunain, a talented frontend developer that loves creating immersive
               web experiences.
             </p>
@@ -173,4 +177,4 @@
           </g>
         </svg>
 </body>
-</html>  
+</html> 

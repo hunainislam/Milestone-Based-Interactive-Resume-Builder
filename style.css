@@ -17,15 +17,13 @@ body {
   background: #050808;
 }
 
-.banner > img {
-  width: 60vw;
-  transition: 0.1s linear;
-}
 
 .banner h2 {
   font-weight: 500;
   font-size: 30px;
   margin: 10px;
+  color: aqua;
+  font-size: 60px;
 }
 
 .banner p {
@@ -33,26 +31,7 @@ body {
   line-height: 1.65;
   font-size: 17px;
   opacity: 0.7;
-}
-
-@media (width >= 420px) {
-  .banner > img {
-    width: 40vw;
-  }
-}
-
-@media (width >= 648px) {
-  .banner {
-    text-align: left;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .banner > img {
-    width: 10vw;
-    left: 100px;
-    
-  }
+  font-size: 32px;
 }
 
 .waves > use {
@@ -79,33 +58,16 @@ body {
 
 svg {
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 0%;
   width: 100%;
-  height: 30vw;
-  max-height: 150px;
+  height: 50vw;
+  max-height: 250px;
   z-index: -1;
 }
 
-@media (max-width: 768px) {
-  svg {
-    height: 20vh;
-    top: 60%;
-    left: 0%;
-    max-height: 100px;
-  }
-}
 
-header {
-  position: relative;
-  overflow: hidden;
-}
 
-@media (max-width: 480px) {
-  svg {
-    height: 25vh;
-    max-height: 80px;
-    top: 60%;
-    left: 0%;
-  }
-}
+
+
+

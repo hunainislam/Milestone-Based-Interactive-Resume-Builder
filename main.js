@@ -49,7 +49,7 @@ resumeFormElement === null || resumeFormElement === void 0 ? void 0 : resumeForm
         li.textContent = skill.trim();
         skillsList.appendChild(li);
     });
-    document.querySelector('#work-info').textContent = workInput;
+    document.querySelector('#work-infom').textContent = workInput;
 
     // Hide the form after submission
     resumeForm.style.display = 'none';
@@ -61,7 +61,7 @@ resumeFormElement === null || resumeFormElement === void 0 ? void 0 : resumeForm
 // Make the Form editable
 
 const edit_resume = document.querySelector("#edit-resume").addEventListener('click', function() {
-    toggleEditableSection("#display-name", "#display-email", "#skills-list", "#education-info", "#work-info");
+    toggleEditableSection("#display-name", "#display-email", "#skills-list", "#education-info", "#work-infom", "#name", "#contact");
 });
 
 // // Helper function to toggle contentEditable on a section
@@ -99,17 +99,31 @@ const copylink = document.querySelector("#copy-link").addEventListener('click', 
 
 // PDF download section
 
-document.querySelector("#download-pdf").addEventListener('click', function() {
+const downloadButton = document.querySelector("#download-pdf").addEventListener('click', function() {
 
-    const resumeElement = document.body;  // All body pdf create
+    const resumeElement = document.body; 
 
     html2pdf()
-        .from(resumeElement)  // HTML element convert
+        .from(resumeElement) 
         .set({
-            margin: 1,
-            filename: 'resume.pdf',  // File name
-            html2canvas: { scale: 2 },  // High quality output scale
-            jsPDF: { orientation: 'portrait' },  // Portrait orientation 
+            margin: 0,
+            filename: 'resume.pdf',  
+            html2canvas: { scale: 2 },  
+            jsPDF: { orientation: 'portrait' }, 
         })
-        .save();  // PDF file saveus 
+        .save(); 
 })
+
+// Image upload functionality
+document.getElementById('upload-image').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('profile-picture').src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+

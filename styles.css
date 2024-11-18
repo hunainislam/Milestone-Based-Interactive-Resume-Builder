@@ -2,7 +2,6 @@ body {
     font-family: Arial, sans-serif;
     margin: 20px;
     background-color: #f4f4f4;
-    zoom: 200%;
 }
 
 header {
@@ -10,10 +9,37 @@ header {
     margin-bottom: 20px;
 }
 
+h1 {
+    display: block;
+    font-size: 4em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    margin-top: 65px;
+}
+
+.name {
+    color: white;
+}
+
+.contact {
+    color: white;
+    font-size: 30px;
+}
+
 img {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 350px;
+    height: 350px;
+}
+
+#upload-image {
+    margin-top: 20px;
+    color: aqua;
+    font-size: 30px;
 }
 
 section {
@@ -26,31 +52,139 @@ h2 {
     padding-bottom: 5px;
 }
 
+.personal {
+    color: aqua;
+    font-size: 50px;
+}
+
+#personal-info p {
+    font-size: 32px;
+}
+
+.education {
+    font-size: 50px;
+    color: aqua;
+}
+
+.education-info {
+    font-size: 32px;
+}
+
+.skill {
+    font-size: 50px;
+    color: aqua;
+}
+
+#skills-list {
+    font-size: 32px;
+    margin-left: 35px;
+}
+
+.work {
+    font-size: 50px;
+    color: aqua;
+}
+
+.work-info {
+    font-size: 32px;
+}
+
+
 footer {
     margin-top: 20px;
 }
 
 button {
-    margin: 5px;
-    padding: 10px 20px;
-    background-color: #007bff;
+    margin: 20px;
+    padding: 20px 20px;
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 20px;
+    background: aqua;
+    font-size: 30px;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background: white;
+    color: aqua;
 }
 
 form {
     margin-top: 20px;
+    font-size: 32px;
+}
+
+.btn {
+    border-radius: 20px;
+    background-color: aqua;
+
+}
+
+input {
+    width: 60%;
+    padding: 10px;
+}
+
+#resume-form h2 {
+    color: aqua;
+    font-size: 50px;
+}
+
+@media (max-width: 768px) {
+    img {
+        width: 200px;
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 3em;
+        margin-top: 40px;
+    }
+
+    .contact {
+        font-size: 20px;
+    }
+
+    #upload-image {
+        font-size: 20px;
+    }
+
+    .personal,
+    .education,
+    .skill,
+    .work {
+        font-size: 30px;
+    }
+
+    #personal-info p,
+    .education-info,
+    #skills-list,
+    .work-info,
+    form {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 10px 15px;
+    }
+
+    input {
+        width: 90%;
+        padding: 8px;
+    }
+
+    #resume-form h2 {
+        font-size: 30px;
+    }
 }
 
 @media (max-width: 600px) {
     img {
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
+        margin-top: 40px;
     }
 
     body {
